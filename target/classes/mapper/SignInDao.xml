@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bookSystem.dao.SignInDao">
+
+
+    <resultMap type="SignIn" id="SignInResult">
+        <result property="PHONE" column="phone" />
+        <result property="PASSWORD" column="password" />
+    </resultMap>
+
+    <select id="queryByphone" resultMap="SignInResult">
+        select password from user
+        where  phone=#{PHONE}
+    </select>
+
+</mapper>
